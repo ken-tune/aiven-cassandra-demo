@@ -1,8 +1,10 @@
 #!/bin/bash
 
+AIVEN_PROJECT=ktune-demo
+
 CASSANDRA_TOOLS_DIR=../downloads/apache-cassandra-4.0.12
 CASSANDRA_PORT=13091
-CASSANDRA_HOST=callsign-cassandra-ktune-demo.a.aivencloud.com
+CASSANDRA_HOST=callsign-cassandra-${AIVEN_PROJECT}.a.aivencloud.com
 
 CERTS_DIR=certs
 TRUSTSTORE_LOCATION=$CERTS_DIR/myTrustStore.jks
