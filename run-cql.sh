@@ -1,6 +1,5 @@
 #!/bin/bash
 
 . env.sh
-. cassandra-env.sh
 
-cqlsh --ssl -u $CASSANDRA_USER -p $CASSANDRA_PASSWORD $CASSANDRA_HOST $CASSANDRA_PORT
+cqlsh --ssl -u $AIVEN_ADMIN_USER -p $AIVEN_SERVICE_PASSWORD $CASSANDRA_HOST $CASSANDRA_PORT
