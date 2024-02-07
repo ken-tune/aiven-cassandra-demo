@@ -94,6 +94,10 @@ resource "aiven_service_integration" "demo-cassandra-logs-integration"{
   integration_type = "logs"
   source_service_name = aiven_cassandra.demo-cassandra.service_name
   destination_service_name = aiven_opensearch.demo-cassandra-logs.service_name
+
+  depends_on = [
+    aiven_cassandra.demo-cassandra,aiven_opensearch.demo-cassandra-logs
+  ]
 }
 
 ###################################################
@@ -105,6 +109,11 @@ resource "aiven_service_integration" "demo-cassandra-metrics-integration"{
   integration_type = "metrics"
   source_service_name = aiven_cassandra.demo-cassandra.service_name
   destination_service_name = aiven_influxdb.demo-cassandra-ts-db.service_name
+
+  depends_on = [
+    aiven_cassandra.demo-cassandra,aiven_influxdb.demo-cassandra-ts-db
+  ]
+
 }
 
 ###################################################
@@ -116,4 +125,9 @@ resource "aiven_service_integration" "demo-cassandra-grafana-integration"{
   integration_type = "dashboard"
   destination_service_name = aiven_influxdb.demo-cassandra-ts-db.service_name
   source_service_name = aiven_grafana.demo-cassandra-grafana.service_name
+
+  depends_on = [
+    aiven_influxdb.demo-cassandra-ts-db,aiven_grafana.demo-cassandra-grafana
+  ]
+
 }
