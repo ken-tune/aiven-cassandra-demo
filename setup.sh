@@ -1,11 +1,14 @@
 #!/bin/bash
 
 # Get login token
-source myEnv.sh
+source aivenToken.sh
 
-# Configuration
+# Environment variables
 source env.sh
 
 # Build Terraform assets
 terraform apply -auto-approve 
+
+# Reset service passwords
+useful/resetServicePasswords.sh
 
