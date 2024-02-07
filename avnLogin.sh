@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source myEnv.sh
+source aivenToken.sh
 echo $TF_VAR_aiven_api_token | pbcopy
 
 echo Token is in your clipboard - just command-v to paste
