@@ -4,7 +4,7 @@
 source myEnv.sh
 
 # Configuration
-source projConfig.sh
+source env.sh
 
 # Build Terraform assets
 terraform apply -auto-approve 
