@@ -5,7 +5,7 @@ CASSANDRA_PORT=13091
 CASSANDRA_HOST=callsign-cassandra-ktune-demo.a.aivencloud.com
 
 CERTS_DIR=certs
-TRUSTSTORE=$CERTS_DIR/myTrustStore.jks
+TRUSTSTORE_LOCATION=$CERTS_DIR/myTrustStore.jks
 CA_PATH=$CERTS_DIR/ca.pem
 
 export SSL_CERTFILE=$CA_PATH
