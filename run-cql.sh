@@ -7,6 +7,7 @@
 useful/check-certs.sh
 
 # Get Cassandra port
-useful/get-cassandra-port.sh
+. useful/get-cassandra-port.sh
 
+echo $CASSANDRA_PORT
 cqlsh --ssl -u $AIVEN_ADMIN_USER -p $AIVEN_SERVICE_PASSWORD $CASSANDRA_HOST $CASSANDRA_PORT
