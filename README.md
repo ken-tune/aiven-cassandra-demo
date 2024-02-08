@@ -114,4 +114,44 @@ create table mySpace.myTable(id int PRIMARY KEY,value text);
 insert into myspace.myTable(id,value) values(1,'Hello World');
 ```
 
-## B
+## Basic benchmarking
+
+Run `./run-benchmarking.sh`
+
+## Log access
+
+You can access the Cassandra logs in open search via 
+
+```bash
+https://${SERVICE_NAME_PREFIX}-cassandra-logs-${AIVEN_PROJECT}.a.aivencloud.com/
+```
+
+(Source env.sh and then echo the above)
+
+The password is the one you chose in user-specific.sh
+
+You can also find this by accessing the service in the Aiven Console and choosing Quick Connect.
+
+## Grafana Access
+
+Similarly, the monitoring dashboard for your Cassandra deployment may be found at
+
+```bash
+https://${SERVICE_NAME_PREFIX}-cassandra-grafana-${AIVEN_PROJECT}.a.aivencloud.com/
+```
+
+## Notes on Passwords
+
+As part of setup.sh, the password is set to the password chosen in userSpecific.sh
+
+However by default a strong password is chosen, the script `useful/resetServicePasswords.sh` resets this for convenience. You can remove this by commenting out use of the reset password script in `setup.sh`
+
+This will mean you will need to find a way of supplying the password if looking to run `run-cql.sh` or `run-benchmarking.sh`
+
+## Teardown
+
+```bash
+source avnToken.sh
+terraform destroy -auto-approve
+```
+
