@@ -32,3 +32,4 @@ PATH=$PATH:$CASSANDRA_TOOLS_DIR/tools/bin:$CASSANDRA_TOOLS_DIR/bin
 export TF_VAR_project_name=$AIVEN_PROJECT
 export TF_VAR_service_name_prefix=$SERVICE_NAME_PREFIX
 
+export AIVEN_PROJECT
