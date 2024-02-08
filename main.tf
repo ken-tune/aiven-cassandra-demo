@@ -3,6 +3,9 @@ variable "project_name" {}
 variable "service_cloud" {}
 variable "service_name_prefix" {}
 variable "service_plan_cassandra" {}
+variable "service_plan_influx" {}
+variable "service_plan_opensearch" {}
+variable "service_plan_grafana" {}
 
 variable "ips" {
     type = list(object({
@@ -54,7 +57,7 @@ resource "aiven_cassandra" "demo-cassandra" {
 resource "aiven_opensearch" "demo-cassandra-logs" {
   project = var.project_name
   cloud_name = var.service_cloud
-  plan = "startup-4"
+  plan = var.service_plan_opensearch
   service_name = "${var.service_name_prefix}-cassandra-logs"
 }
 
@@ -65,7 +68,7 @@ resource "aiven_opensearch" "demo-cassandra-logs" {
 resource "aiven_influxdb" "demo-cassandra-ts-db"{
   project = var.project_name
   cloud_name = var.service_cloud
-  plan = "startup-4"
+  plan = var.service_plan_influx
   service_name = "${var.service_name_prefix}-cassandra-influxdb"
 }
 
@@ -76,7 +79,7 @@ resource "aiven_influxdb" "demo-cassandra-ts-db"{
 resource "aiven_grafana" "demo-cassandra-grafana"{
   project = var.project_name
   cloud_name = var.service_cloud
-  plan = "startup-1"
+  plan = var.service_plan_grafana
   service_name = "${var.service_name_prefix}-cassandra-grafana"
 }
 
