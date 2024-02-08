@@ -32,5 +32,5 @@ PATH=$PATH:$CASSANDRA_TOOLS_DIR/tools/bin:$CASSANDRA_TOOLS_DIR/bin
 
 # Need to export some variables to Terraform so they can be used
 export TF_VAR_project_name=$AIVEN_PROJECT
-export TV_VAR_service_name_prefix=$SERVICE_NAME_PREFIX
+export TF_VAR_service_name_prefix=$SERVICE_NAME_PREFIX
 
